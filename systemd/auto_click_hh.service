@@ -1,0 +1,16 @@
+[Unit]
+Description=Автоматическое обновление резюме на hh.ru
+
+[Service]
+Type=simple
+User=debian
+#X11
+Environment="DISPLAY=:0.0"
+Environment="XAUTHORITY=/home/debian/.Xauthority"
+EnvironmentFile=/etc/default/auto_click_hh.env
+WorkingDirectory=/home/debian/services/auto_click_hh
+Environment="PATH=/home/debian/services/auto_click_hh/auto_click_hh/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ExecStart=/home/debian/services/auto_click_hh/auto_click_hh/bin/python /home/debian/services/auto_click_hh/main.py
+
+[Install]
+WantedBy=multi-user.target

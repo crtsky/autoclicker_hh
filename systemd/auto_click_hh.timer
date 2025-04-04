@@ -1,0 +1,13 @@
+[Unit]
+Description=Автоматическое обновление резюме на hh каждые 4 часа
+
+[Timer]
+OnCalendar=*-*-* 06:00:00
+OnCalendar=*-*-* 10:05:00
+OnCalendar=*-*-* 14:10:00
+OnCalendar=*-*-* 18:15:00
+OnCalendar=*-*-* 22:20:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
